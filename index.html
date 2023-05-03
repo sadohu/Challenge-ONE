@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge ONE</title>
+    <title>Encriptador - Challenge ONE</title>
 </head>
 <body>
-    <input id="msg" type="text">
-    <textarea name="" id="result" cols="30" rows="10"></textarea>
-    <button id="encriptar" type="button">Encriptar</button>
-    <button id="desencriptar" type="button">Desencriptar</button>
-    <button id="copiar" type="button">Copiar mensaje</button>
-    
+    <header>
+        <img src="img/Logo.png" alt="">
+    </header>
+
+    <main>
+        <input id="msg" type="text" pattern="[a-z\s]+" placeholder="Ingrese el texto aquí">
+        <button id="borrar" type="button">Borrar</button>
+        <textarea name="" id="result" cols="30" rows="10"></textarea>
+        <button id="encriptar" type="button">Encriptar</button>
+        <button id="desencriptar" type="button">Desencriptar</button>
+        <button id="copiar" type="button">Copiar mensaje</button>
+        
+    </main>
+
+    <footer>
+
+    </footer>
+
     <script src="js/encriptar.js"></script>
 </body>
 </html>

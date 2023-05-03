@@ -8,18 +8,40 @@ function copiarMsg(){
     limpiar();
 }
 
+function validarFormato(msg){
+    let formato = /^[a-z\s]+$/;
+    console.log(msg);
+    let arrayValido = msg.match(formato);
+    console.log(arrayValido);
+    if(arrayValido != null)
+        return true;
+    else
+        return false;
+    /*Obtener la cadena hasta no encontrar una coincidencia
+    var formato = /[a-z\s]+/g;
+    var msg = "hola hugo pato HoLa";
+    var array = msg.match(formato);
+    console.log(array);
+    console.log(array[0], array[2]);*/
+}
+
 function accion(evento){
     //console.log(evento);
     let msg = "";
-    let res = "";
     msg = document.querySelector("#msg").value;
-    if(evento.target.id == "encriptar"){
-        res = encriptador(msg);
+    let validacion = validarFormato(msg);
+    if(validacion){
+        let res = "";
+        if(evento.target.id == "encriptar"){
+            res = encriptador(msg);
+        }else{
+            res = desencriptador(msg);
+        }
+        document.querySelector("#result").value = res;
+        limpiar();
     }else{
-        res = desencriptador(msg);
-    }
-    document.querySelector("#result").value = res;
-    limpiar();
+        console.log("Error formato erróneo");
+    }    
 }
 
 function encriptador(msg){
@@ -121,10 +143,12 @@ function desencriptador(msg){
 let encriptar = document.querySelector("#encriptar");
 let desencriptar = document.querySelector("#desencriptar");
 let copiar = document.querySelector("#copiar");
+let btnBorrar = document.querySelector("#borrar");
 
 encriptar.onclick = accion;
 desencriptar.onclick = accion;
 copiar.onclick = copiarMsg;
+btnBorrar.onclick = limpiar;
 
 console.log(encriptar); 
 console.log(desencriptar); 
