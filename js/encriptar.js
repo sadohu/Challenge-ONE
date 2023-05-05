@@ -10,9 +10,7 @@ function copiarMsg(){
 
 function validarFormato(msg){
     let formato = /^[a-z\s]+$/;
-    console.log(msg);
     let arrayValido = msg.match(formato);
-    console.log(arrayValido);
     if(arrayValido != null)
         return true;
     else
@@ -26,9 +24,7 @@ function validarFormato(msg){
 }
 
 function accion(evento){
-    //console.log(evento);
-    let msg = "";
-    msg = document.querySelector("#msg").value;
+    let msg = document.querySelector("#msg").value;
     let validacion = validarFormato(msg);
     if(validacion){
         let res = "";
@@ -41,6 +37,7 @@ function accion(evento){
         limpiar();
     }else{
         console.log("Error formato erróneo");
+        limpiar();
     }    
 }
 
