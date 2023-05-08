@@ -1,27 +1,4 @@
-function limpiar(){
-    document.querySelector("#msg").value = null;
-}
-
-function copiarMsg(){
-    const res = document.querySelector("#result").value;
-    navigator.clipboard.writeText(res);
-    limpiar();
-}
-
-function validarFormato(msg){
-    let formato = /^[a-z\s]+$/;
-    let arrayValido = msg.match(formato);
-    if(arrayValido != null)
-        return true;
-    else
-        return false;
-    /*Obtener la cadena hasta no encontrar una coincidencia
-    var formato = /[a-z\s]+/g;
-    var msg = "hola hugo pato HoLa";
-    var array = msg.match(formato);
-    console.log(array);
-    console.log(array[0], array[2]);*/
-}
+/* Funciones Principales */
 
 function accion(evento){
     let msg = document.querySelector("#msg").value;
@@ -34,11 +11,12 @@ function accion(evento){
             res = desencriptador(msg);
         }
         document.querySelector("#result").value = res;
-        limpiar();
+        mostrarCuerpoResult(false);
+        mensajeError(false);
     }else{
-        console.log("Error formato erróneo");
+        mensajeError(true);
         limpiar();
-    }    
+    }
 }
 
 function encriptador(msg){
@@ -136,18 +114,79 @@ function desencriptador(msg){
 }
 
 
+/* Funciones Secundarias */
+
+function validarFormato(msg){
+    let formato = /^[a-z\s]+$/;
+    let arrayValido = msg.match(formato);
+    if(arrayValido != null)
+        return true;
+    else
+        return false;
+}
+
+function limpiar(){
+    document.querySelector("#msg").value = null;
+    document.querySelector("#result").value = null;
+    mostrarCuerpoResult(true);
+}
+
+function copiarMsg(){
+    const res = document.querySelector("#result").value;
+    navigator.clipboard.writeText(res);
+    limpiar();
+}
+
+function mostrarCuerpoResult(mostrar){
+    if(mostrar == true){
+        copiar.style.visibility = "hidden";
+        imgMuñeco.style.visibility = "visible";
+        resultMensaje.style.visibility = "visible";
+        resultMensajeDesc.style.visibility = "visible";
+    }else{
+        copiar.style.visibility = "visible";
+        imgMuñeco.style.visibility = "hidden";
+        resultMensaje.style.visibility = "hidden";
+        resultMensajeDesc.style.visibility = "hidden";
+    }
+}
+
+function mensajeError(condicion){
+    let error = document.querySelector("#lblError");
+    if(condicion){
+        let fntsz = window.getComputedStyle(error).fontSize;
+        switch(fntsz){
+            case "12px":{
+                error.style.fontSize = "20px";
+                error.style.color = "red";
+                break;
+            }
+            case "20px":{
+                error.style.fontSize = "30px";
+                error.style.color = "red";
+                break;
+            }
+        }
+    }else{
+        error.style.fontSize = "12px";
+        error.style.color = "#495057";
+    }
+}
+
+/* Declaración de Variables */
 
 let encriptar = document.querySelector("#encriptar");
 let desencriptar = document.querySelector("#desencriptar");
 let copiar = document.querySelector("#copiar");
 let btnBorrar = document.querySelector("#borrar");
+let imgMuñeco = document.querySelector("#muñeco");
+let resultMensaje = document.querySelector(".result-mensaje");
+let resultMensajeDesc = document.querySelector(".result-mensaje-descripcion");
+
+
+/* Eventos de captura */
 
 encriptar.onclick = accion;
 desencriptar.onclick = accion;
 copiar.onclick = copiarMsg;
 btnBorrar.onclick = limpiar;
-
-console.log(encriptar); 
-console.log(desencriptar); 
-console.log(copiar);
-

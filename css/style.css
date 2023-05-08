@@ -16,9 +16,14 @@ button{
 
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 /*Cuerpo Principal*/
 .principal{
     width: 70%;
+    
 }
 
     /*Titulo*/
@@ -48,13 +53,11 @@ button{
 .cuerpo-principal{
     margin: 40px 0px 40px 15%;
     width: 80%;
-    /* background-color: red; */
 }
 
 .mensaje-principal{
     width: 90%;
     margin-left: 5%;
-    /* background-color: blue; */
     position: relative;
 }
 
@@ -95,6 +98,7 @@ button{
     color: #fff;
 }
 
+    /* Mensaje de advertencia o Error */
 .mensaje-advertencia{
     height: 40px;
 }
@@ -114,7 +118,6 @@ button{
 
     /*Botones del Cuerpo*/
 .botones-accion{
-    /* background-color: green; */
     width: 85%;
     margin: 10px 0px 10px 0px;
     text-align: center;
@@ -137,13 +140,12 @@ button{
 /*Mensaje resultante*/
 .mensaje{
     width: 30%;
-    background-color: #0A3871;
     margin: 40px;
     position: relative;
 }
 
 .mensaje textarea{
-    height: 800px;
+    height: 790px;
     width: 370px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -154,7 +156,7 @@ button{
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
     color: #495057;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px 80px 20px;
 }
 
 .mensaje textarea::placeholder{
@@ -168,16 +170,40 @@ button{
 .mensaje button{
     position: absolute;
     left: 85px;
-    top: 760px;
-}
-
-
-
-
-
-
-#copiar{
-    background-color: #D8DFE8;
+    top: 810px;
+    background-color: #fff;
     border: 1px solid #0A3871;
     color: #0A3871;
+    visibility: hidden;
+}
+
+.mensaje img{
+    position: absolute;
+    top: 250px;
+    left: 40px;
+}
+
+.mensaje p{
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    width: 330px;
+}
+
+.result-mensaje{
+    font-weight: 700;
+    font-size: 24px;
+    color: #343A40;
+    
+    top: 600px;
+    left: 50px;
+}
+
+.result-mensaje-descripcion{
+    font-weight: 400;
+    font-size: 16px;
+    color: #495057; 
+    top: 670px;
+    left: 50px;
 }
