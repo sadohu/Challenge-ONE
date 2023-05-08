@@ -20,6 +20,10 @@ button:hover{
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+}
+
 /*Cuerpo Principal*/
 .principal{
     width: 70%;
@@ -207,3 +211,39 @@ button:hover{
     top: 670px;
     left: 50px;
 }
+
+footer {
+    margin: 20px 0 0 0;
+    height: 80px;
+    padding: 0 30px;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+    font-size: 20px;
+    background-color: #0A3871;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .redes ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .redes li {
+    margin-left: 20px;
+  }
+  
+  .redes img{
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 15px;
+  }
+
+  .logoGithub {
+    width: 40px;
+  }
+  
+  .logoLinkedIn {
+    width: 50px;
+  }
