@@ -13,7 +13,6 @@ button{
     height: 50px;
     border-radius: 18px;
     background-color: #0A3871;
-
 }
 
 button:hover{
@@ -174,7 +173,7 @@ a{
 .mensaje button{
     position: absolute;
     left: 85px;
-    top: 810px;
+    bottom: 20px;
     background-color: #fff;
     border: 1px solid #0A3871;
     color: #0A3871;
@@ -212,6 +211,7 @@ a{
     left: 50px;
 }
 
+/* Footer */
 footer {
     margin: 20px 0 0 0;
     height: 80px;
@@ -223,27 +223,206 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
+}
   
-  .redes ul {
+.redes ul {
     list-style: none;
     display: flex;
-  }
+}
   
-  .redes li {
+.redes li {
     margin-left: 20px;
-  }
+}
   
-  .redes img{
+.redes img{
     height: 40px;
     vertical-align: middle;
     border-radius: 15px;
-  }
+}
 
-  .logoGithub {
+.logoGithub {
     width: 40px;
-  }
+}
   
-  .logoLinkedIn {
+.logoLinkedIn {
     width: 50px;
-  }
+}
+
+  
+/* Responsive */
+@media screen and (max-width: 768px){
+    body, footer{
+        width: 768px;
+    }
+    main{
+        display: block;
+        width: 100%;
+    }
+    .principal{
+        margin: 0 auto;
+        width: 85%;
+    }
+    .titulo-principal{
+        margin: 40px auto;
+        width: 100%;
+    }
+    .cuerpo-principal{
+        margin: 40px auto;
+        width: 100%;
+    }
+    .mensaje-principal textarea {
+        width: 100%;
+    }
+    .borrar{
+        top: -50px;
+        width: 10%;
+    }
+    .botones-accion{
+        margin: 10px auto;
+    }
+    .mensaje{
+        width: 85%;
+        margin: 40px auto;
+    }
+    .mensaje textarea{
+        height: 100px;
+        width: calc(100% - 80px);
+        padding: 40px;
+        padding-bottom: 70px;
+    }
+    .mensaje img{
+        display: none;
+    }
+    .mensaje p {
+        width: 100%;
+        left: 0;
+    }
+    .result-mensaje {
+        top: 30%;
+    }
+    .result-mensaje-descripcion {
+        top: 50%;
+    }
+    .mensaje button {
+        bottom: 10px;
+        left: 5%;
+        width: 90%;
+    }
+    footer{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 375px){
+    body, footer{
+        width: 100%;
+    }
+    .principal{
+        width: 95%;
+    }
+    .titulo-principal{
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .titulo-principal img, .titulo-principal h1{
+        position: static;
+    }
+    .mensaje-principal textarea{
+        margin-top: 20px;
+        height: 500px;
+    }
+    .borrar{
+        width: 75px;
+        height: 40px;
+        top: -20px;
+    }
+    .mensaje-advertencia{
+        text-align: center;
+        margin: 30px 0;
+    }
+    .mensaje-advertencia img{
+        margin-left: 0;
+    }
+    .botones-accion{
+        margin: 10px auto;
+    }
+    #encriptar{
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .result-mensaje-descripcion{
+        top: 60%;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .desarrollo{
+        margin: 5px 0;
+    }
+}
+
+
+/*
+    body, footer{
+        width: 768px;
+    }
+    main{
+        display: block;
+        width: 100%;
+    }
+    .principal{
+        margin: 0 auto;
+        width: 85%;
+    }
+    .titulo-principal{
+        margin: 40px auto;
+        width: 100%;
+    }
+    .cuerpo-principal{
+        margin: 40px auto;
+        width: 100%;
+    }
+    .mensaje-principal textarea {
+        width: 100%;
+    }
+    .borrar{
+        top: -50px;
+        width: 10%;
+    }
+    .botones-accion{
+        margin: 10px auto;
+    }
+    .mensaje{
+        width: 85%;
+        margin: 40px auto;
+    }
+    .mensaje textarea{
+        height: 100px;
+        width: calc(100% - 80px);
+        padding: 40px;
+        padding-bottom: 70px;
+    }
+    .mensaje img{
+        display: none;
+    }
+    .mensaje p {
+        width: 100%;
+        left: 0;
+    }
+    .result-mensaje {
+        top: 30%;
+    }
+    .result-mensaje-descripcion {
+        top: 50%;
+    }
+    .mensaje button {
+        bottom: 10px;
+        left: 5%;
+        width: 90%;
+    }
+    footer{
+        padding: 0;
+    }*/

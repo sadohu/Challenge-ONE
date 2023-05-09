@@ -15,7 +15,6 @@ function accion(evento){
         mensajeError(false);
     }else{
         mensajeError(true);
-        limpiar();
     }
 }
 
@@ -129,6 +128,7 @@ function limpiar(){
     document.querySelector("#msg").value = null;
     document.querySelector("#result").value = null;
     mostrarCuerpoResult(true);
+    mensajeError(false);
 }
 
 function copiarMsg(){
@@ -162,14 +162,14 @@ function mensajeError(condicion){
                 break;
             }
             case "20px":{
-                error.style.fontSize = "30px";
-                error.style.color = "red";
+                error.style.textDecoration = "underline";
                 break;
             }
         }
     }else{
         error.style.fontSize = "12px";
         error.style.color = "#495057";
+        error.style.textDecoration = "none";
     }
 }
 
