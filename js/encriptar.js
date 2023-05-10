@@ -19,96 +19,20 @@ function accion(evento){
 }
 
 function encriptador(msg){
-    let cad = "";
-    for(let i = 0; i < msg.length; i++){
-        let chr, modif = "";
-        chr = msg[i];
-        switch(chr){
-            case "a":{
-                modif = "ai";
-                break;
-            }
-            case "e":{
-                modif = "enter";
-                break;
-            }
-            case "i":{
-                modif = "imes";
-                break;
-            }
-            case "o":{
-                modif = "ober";
-                break;
-            }
-            case "u":{
-                modif = "ufat";
-                break;
-            }
-            default:{
-                modif = chr;
-                break;
-            }
-        }
-        cad += modif;
-    }
+    let listEncriptacion = {a: "ai", e: "enter", i: "imes", o: "ober", u: "ufat"};
+    let formato = /([aeiou])/g;
+    let cad = msg.replace(formato, (match, p1) => {
+        return listEncriptacion[p1];
+    });
     return cad;
 }
 
 function desencriptador(msg){
-    let cad = "";
-    let i = 0;
-    while(i < msg.length){
-        let chr, modif = "";
-        chr = msg[i];
-        switch(chr){
-            case "a":{
-                let corte = msg.slice(i, i + 2);
-                if(corte == "ai"){
-                    modif = "a";
-                    i += 2;
-                }
-                break;
-            }
-            case "e":{
-                let corte = msg.slice(i, i + 5);
-                if(corte == "enter"){
-                    modif = "e";
-                    i += 5;
-                }
-                break;
-            }
-            case "i":{
-                let corte = msg.slice(i, i + 4);
-                if(corte == "imes"){
-                    modif = "i";
-                    i += 4;
-                }
-                break;
-            }
-            case "o":{
-                let corte = msg.slice(i, i + 4);
-                if(corte == "ober"){
-                    modif = "o";
-                    i += 4;
-                }
-                break;
-            }
-            case "u":{
-                let corte = msg.slice(i, i + 4);
-                if(corte == "ufat"){
-                    modif = "u";
-                    i += 4;
-                }
-                break;
-            }
-            default:{
-                modif = chr;
-                i++;
-                break;
-            }
-        }
-        cad += modif;
-    }
+    let listDesencriptacion = {ai: "a", enter: "e", imes: "i", ober: "o", ufat: "u"};
+    let formato = /(ai|enter|imes|ober|ufat)/g;
+    let cad = msg.replace(formato, (match, p1) => {
+        return listDesencriptacion[p1];
+    });
     return cad;
 }
 
